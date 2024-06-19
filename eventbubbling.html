@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <div class="grandparent">
+    <div class="parent">
+        <div class="child">
+            yes i am child
+        </div>
+    </div>
+  </div>
+  <script>
+    document.querySelector(".child").addEventListener("click",()=>{
+        alert("Child was clicked!")
+    })
+    document.querySelector(".parent").addEventListener("click",(e)=>{
+        e.stopPropagation()//this will stop event bubbling 
+        alert("parent was clicked!")
+    })
+    document.querySelector(".grandparent").addEventListener("click",()=>{
+        alert("gradparent was clicked!")
+    })
+  </script>
+</body>
+</html>
